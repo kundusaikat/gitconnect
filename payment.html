@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        #payByCard {
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            width: 30%;
+            padding: 20px 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #215dc8;
+        }
+
+        form {
+            display: grid;
+            flex-direction: column;
+            row-gap: 25px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="payByCard">
+        <h1>Enter Debit Card Details</h1>
+        <form>
+            <input type="number" required="required" placeholder="Enter Card Number" id="card-number">
+            <input type="number" required="required" placeholder="Expiry Date" id="card-expirydate">
+            <input type="number" required="required" placeholder="CVV" id="card-cvv">
+            <input type="text" placeholder="Enter Name" id="holder-name">
+            <input type="submit" value="Pay Now">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#payByCard > form").addEventListener("submit", payNow)
+    function payNow() {
+        event.preventDefault();
+        let cardObj = {
+            cardNumber: document.querySelector("#card-number").value,
+            expiry: document.querySelector("#card-expirydate").value,
+            cardCvv: document.querySelector("#card-cvv").value,
+            name: document.querySelector("#holder-name").value,
+        }
+        console.log(cardObj)
+    }
+
+
+
+</script>
